@@ -37,7 +37,7 @@ public class StroreController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 		
-		//--------------------------------------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
 		int cookCartCnt = 0;
 		
@@ -56,7 +56,6 @@ public class StroreController extends HttpServlet {
 				session.setAttribute("cookCartCnt", cookCartCnt);					
 			}
 		}
-		//--------------------------------------------------------------------------------------------------------
 		
 		String page = "/WEB-INF/_main/main.jsp";
 		String inc_page = "../store/";
@@ -125,7 +124,6 @@ public class StroreController extends HttpServlet {
 			rd.forward(request, response);
 			
 		} else if(url.contains("prodDisplay.do") == true) { //베스트&신상목록
-			//System.out.println("prodDisplay");			
 			String endRecordNum_ = request.getParameter("endRowNum");
 			String sort = request.getParameter("sort");
 						
@@ -157,7 +155,6 @@ public class StroreController extends HttpServlet {
 			rd.forward(request, response);
 			
 		} else if(url.contains("view.do") == true) { //상세보기
-			//System.out.println("view");
 			String no_ = request.getParameter("no");
 			int no = Integer.parseInt(no_);
 			
@@ -178,7 +175,6 @@ public class StroreController extends HttpServlet {
 			rd.forward(request, response);
 			
 		} else if(url.contains("searchResult.do") == true) { //검색결과
-			//System.out.println("searchResult");
 			String searchWord = request.getParameter("searchWord");
 			String orderBy = request.getParameter("orderBy");
 						
@@ -197,14 +193,12 @@ public class StroreController extends HttpServlet {
 			
 			int pageRecordSize = 2; // 한페이지에 보이는 "레코드 수"
 			int pageLinkSize = 3;
-			//int pageLinkSize = 1;
 			int totalRecord = dao.getTotalRecord("-", searchWord);
 			int startRecord = pageRecordSize * (pageNo - 1) + 1;
 			int lastRecord = pageRecordSize * pageNo;
 			if(lastRecord > totalRecord ) {
 				lastRecord = totalRecord;
-			}
-			
+			}			
 			int totalPage = 0;
 			int startPage = 1;
 			int lastPage = 1;
@@ -231,7 +225,7 @@ public class StroreController extends HttpServlet {
 			request.setAttribute("totalPage", totalPage);			
 			
 			RequestDispatcher rd = request.getRequestDispatcher(page);
-			rd.forward(request, response);			
+			rd.forward(request, response);
 		}		
 	}
 }
