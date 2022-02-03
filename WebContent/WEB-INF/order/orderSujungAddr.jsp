@@ -219,8 +219,7 @@ function sujungAddr() {
 	}	
 	orderSujungForm.method = "post";
 	orderSujungForm.action = "${path }/order_servlet/orderSujungAddrProc.do";
-	orderSujungForm.submit();
-	
+	orderSujungForm.submit();	
 }
 
 $(function(){
