@@ -37,7 +37,7 @@ public class HelpController extends HttpServlet {
 		String page = "/WEB-INF/_main/main.jsp";
 		String inc_page = "../help/";
 		
-		//--------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
 		
 		HttpSession session = request.getSession();
@@ -46,7 +46,6 @@ public class HelpController extends HttpServlet {
 			cookMemberNo = (Integer) session.getAttribute("cookMemberNo");
 			session.setMaxInactiveInterval(5 * 60); //5분
 		}
-		//--------------------------------------------------------------------------
 		
 		if(url.contains("helpGuide.do") == true) { //고객센터 안내 페이지
 			
@@ -58,7 +57,6 @@ public class HelpController extends HttpServlet {
 			rd.forward(request, response);
 			
 		} else if(url.contains("inquiryAnswer.do") == true) { // 문의/답변 페이지			
-			//회원번호 호출 1개월 이내 ref 이력 호출 (답변은 등록일이 다르기 때문)
 			String periodAgo = request.getParameter("periodAgo");
 			String answerExist_ = request.getParameter("answerExist");
 			
@@ -81,7 +79,6 @@ public class HelpController extends HttpServlet {
 					searchStart = current_date.minusYears(1);
 				}
 			}			
-			
 			if(!(answerExist_ == null || answerExist_.trim().equals(""))) {
 				cntRef = Integer.parseInt(answerExist_);
 			}
@@ -102,8 +99,7 @@ public class HelpController extends HttpServlet {
 			int lastRecord = pageRecordSize * pageNo;
 			if (lastRecord > totalRecord) {
 				lastRecord = totalRecord;
-			}
-			
+			}			
 			int totalPage = 0;
 			int startPage = 1;
 			int lastPage = 1;
@@ -152,7 +148,6 @@ public class HelpController extends HttpServlet {
 			}
 			System.out.println(msg);
 			response.sendRedirect(move);		
-		}
-		
+		}		
 	}
 }
