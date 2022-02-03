@@ -146,8 +146,6 @@ $(function(){
  		} else if(searchLength > 0) {
  			window.location.href = "${path }/store_servlet/searchResult.do?searchWord=" + searchWord;
  		}
- 	});
- 	
+ 	}); 	
 });
-
 </script>
