@@ -1,0 +1,711 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;	
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;		
+}
+html {
+	width: 100%;
+	height: 100%;
+	min-width: 1320px;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section,
+ .header-wrapper, .section-wrapper, .footer-wrapper
+{
+	display: block;
+}
+div.findHeader_wrapper {
+	z-index: 3;
+}
+div.section-wrapper {
+	z-index: 1;
+}
+div.footer-wrapper {
+	z-index: 2;
+}
+body {
+	height: 100%;
+}
+
+.findHeader_wrapper {
+	background-color: #F8F8F6;
+	width: 100%;
+	height: 60px;
+	border-bottom: #F5F2F2 solid 1px;
+	position: fixed;
+	padding-top: 5px;
+	display: flex;
+}
+.section-wrapper {
+	display: block;
+	width: 100%;
+	margin: auto;
+	padding-top: 60px;
+	padding-bottom: 160px;
+	min-height: 100%;
+	height: auto;
+}
+.footer-wrapper {
+	position: relative;	
+	width: 100%;
+	height: 160px;
+	background-color: #F8F8F6;
+	border-top: #F5F2F2 solid 1px;
+	transform: translateY(-100%);
+}
+
+.loginFlame {	
+	width: 550px;
+	height: 460px;
+	margin: 200px auto 0 auto;	
+	border: gray solid 1px;
+	border-radius: 10px;
+}
+.inputFlame {
+	width: 400px;
+	height: 460px;
+	margin: auto;
+}
+.tagArea {
+	height: 150px;
+	margin: auto auto 20px auto ;
+}
+#logoLink {
+	font-size: 55px;
+	font-weight: bold;
+}
+#loginLogo #logoLink #logo {
+	height: 57px;
+	width: 57px;
+	margin-bottom: 10px;
+}
+.idArea, .passwdArea {	
+	height: 50px;
+	margin: 10px auto auto auto;
+	display: flex;
+}
+
+.idTag, .passTag {
+	padding-top: 10px;
+	width: 120px;
+}
+
+.idInput > input, .passInput > input {
+	width: 280px;
+	height: 45px;
+	border: gray solid 1px;
+	padding-left: 10px;
+	outline: none;
+}
+#loginBtn {
+	height: 70px;
+	width: 400px;
+	margin: 25px auto auto auto;
+	text-align: center;
+	border: none;
+	font-size: 20px;
+	border-radius: 5px;
+}
+#addArea {
+	font-size: 13px;
+}
+
+/* join */
+.join_wrapper {
+	width: 500px;
+	margin: 30px auto auto auto;
+	padding-bottom: 100px;
+}
+.join_wrapper input {
+	font-size: 14px;
+	padding-left: 10px;
+}
+.join_wrapper input::placeholder {
+	font-size: 13px;
+	color: #cbcbcb;
+}
+.joinAddrDiv .addrNoArea, .joinAddrDiv .addr1Area, .joinAddrDiv .addr23Area {
+	display: flex;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.joinAddrDiv .addrNoArea input, .joinAddrDiv .addr23Area input {
+	width: 247px;
+}
+.joinAddrDiv input[name=addr_no], .joinAddrDiv input[name=addr2] {
+	margin-right: 6px;
+}
+
+/* findId */
+.findHeader {
+	width: 1320px;
+	margin: auto;
+	display: flex;
+}
+.findHeaderLogo a#logoLink {
+	font-size: 30px;
+}
+.findHeaderLogo a.myPageLink {
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 10px;
+	text-decoration: none;
+}
+.findHeaderLogo a img {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 5px;
+}
+.findHeaderLogo {
+	width: 50%;
+}
+.headerBeforeLogin, .headerAfterLogin {
+	position: relative;
+	width: 50%;
+	text-align: right;
+	line-height: 45px;
+}
+img.headerLoginIcon, .headerAfterLogin #memberUser {
+	width: 25px;
+	height: 25px;
+}
+
+.whatFind_wrapper {
+	width: 500px;
+	margin: 100px auto auto auto;
+	font-size: 20px;
+}
+.findGuide_wrapper {
+	width: 100%;
+	display: flex;
+}
+.findGuide_wrapper a {
+	width: 50%;
+	text-decoration: none;
+	text-align: center;
+	color: #cbcbcb;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #cbcbcb;
+}
+.findDivider {
+	color: #cbcbcb;
+}
+.findInfoInput {
+	margin-top: 50px;	
+}
+.findInfoInput input {
+	padding: 1px 5px;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 50px;
+	border: none;
+	border-bottom: 1px solid #dddddd;
+	font-size: 18px;
+	font-weight: bold;
+}
+.findInfoInput input::placeholder {
+	font-weight: normal;
+}
+.findInfoInput input[type=date] {
+	color: gray;
+	font-weight: normal;
+}
+.findInfoInput #findBtn {
+	width: 100%;
+	height: 50px;
+	font-weight: bold;
+	border-radius: 25px;
+}
+
+/* 아이디 찾기 결과 */
+.findIdResult_wrapper, .findPasswdResult_wrapper {
+	position: relative;
+	width: 600px;
+	margin: auto;	
+}
+.findIdResult_wrapper, .findPasswdResult_wrapper {
+	padding-top: 100px;
+}
+.findIdResultGuide_wrapper, .findPasswdResultGuide_wrapper, .updateMyInfoGuide_wrapper {
+	position: relative;
+	width: 100%;
+	padding-top: 10px;
+	border-bottom: 2px solid #cbcbcb;
+}
+.findIdResultGuide_wrapper .findIdResult, .findPasswdResult, .updateMyInfoGuide {
+	position: absolute;
+	bottom: -1px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+}
+.findIdInfo, .findPasswdInfo {
+	width: 100%;	
+}
+.findResultComent {
+	color: gray;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 30px;	
+}
+.findIdResultInfo_wrapper {
+	display: flex;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	border: 1px solid #cbcbcb;
+	font-size: 14px;
+	font-weight: bold;
+}
+.findIdResultInfo1, .findIdResultInfo2 {
+	width: 300px;
+	text-align: center;
+}
+.findIdResultInfo1 span {
+	margin-left: 5px;
+}
+.findIdResultNoComent {
+	height: 156px;	
+	padding-top: 65px;
+	font-size: 14px;	
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.findResultBtnGroup {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+}
+.findResultBtnGroup button {
+	width: 120px;
+	height: 35px;
+	margin: auto 5px;
+	font-size: 14px;
+	border: 1px solid #cbcbcb;
+}
+
+/* 비밀번호 찾기 결과 */
+form[name=updatePassForm] {
+	width: 100%;
+	height: 200px;
+	border: 1px solid #cbcbcb;
+	font-size: 14px;	
+}
+.updatePasswd_wrapper {
+	padding-top: 30px;
+	width: 400px;
+	margin: auto;
+}
+.updateIdInfo, .updatePass input, .updatePassChk input {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 5px;
+}
+.updatePass input, .updatePassChk input {
+	padding-left: 10px;
+}
+.updateIdInfo {
+	line-height: 40px;
+	font-weight: bold;
+}
+.updateIdInfo span {
+	margin-left: 10px;
+	color: #FF4646;	
+}
+.updatePasswdGuide {
+	width: 100%;
+	margin: 10px auto auto auto;
+	color: gray;
+	font-size: 12px;
+}
+
+/* -- 마이페이지 -- */
+.myPage_wrapper {
+	width: 950px;
+	margin: auto;
+	padding-top: 30px;
+}
+.myPageTitle_wrapper {
+	width: 100%;
+	font-size: 24px;
+	font-weight: bold;	
+	margin: 20px auto 10px 12.5px;	
+}
+.myPageTitle_wrapper span {
+	color: #8d71ec;
+}
+.memberInfo_wrapper {	
+	display: flex;
+	margin: auto;
+	width: 100%;
+	justify-content: center;
+}
+.myInfo_update, .myPass_update {
+	width: 450px;
+	height: 280px;
+	background-color: #F8F8F6;
+	margin: auto;
+	padding: 30px;
+	border-top: #F5F2F2 solid 1px;	
+}
+.memberWithdraw_wrapper {		
+	margin-top: 10px;
+	padding-right: 12.5px;
+	text-align: right;
+}
+.myInfoTitle, .myPassTitle {
+	font-size: 20px;
+	font-weight: bold;
+}
+.myInfoGuide {
+	font-size: 12px;
+	color: #9b9b9b;
+	margin: 10px auto;
+}
+.myInfoViewTB {
+	margin-top: 20px;
+}
+.myInfoViewTB td, .myPassUpdateLink a, .memberWithdraw_wrapper a {
+	font-size: 13px;
+	font-weight: bold;	
+}
+.myInfoViewTB td:first-child {
+	width: 80px;
+}
+.myInfoViewTB td:nth-child(2) {
+	color: gray;
+}
+.myInfoBtnArea {
+	margin-top: 30px;
+}
+.myInfoBtnArea a {
+	font-size: 13px;
+	padding: 5px 15px;
+}
+.myPassUpdateLink {
+	margin-top: 40px;
+}
+/*  메인헤더_메뉴드롭 */
+div#menuDrop, div#memberMenuDrop {
+	position: absolute;
+	width: 130px;
+	height: auto;
+	background-color: white;	
+	border-radius: 10px;
+	line-height: normal;
+	font-size: 13px;
+	top:50px;
+	right: -50px;
+}
+
+/* -- 회원수정 비번확인 -- */
+.updateMyInfo_wrapper {
+	width: 600px;
+	margin: 80px auto auto auto;
+	position: relative;
+	height: auto;
+	padding-top: 30px;
+	border-bottom: 2px solid #dddddd;
+}
+.checkPasswd_wrapper {
+	position: relative;
+	width: 400px;
+	margin: 50px auto auto auto;
+}
+.checkPasswdInfo1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.checkPasswdInfo2 {
+	margin-top: 15px;
+	color: gray;	
+	font-size: 13px;
+}
+.checkPasswdInput input {
+	width: 400px;
+	height: 40px;
+	margin: 30px auto auto auto;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid #dddddd;
+	font-size: 16px;
+}
+.checkPasswdBtn button{
+	width: 400px;
+	height: 40px;
+	margin: 30px auto 50px auto;
+	border-radius: 20px;
+}
+
+/* -- 회원정보 수정 -- */
+.myInfoTB_wrapper, .updateInfoTB_wrapper {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.myInfoTB {
+	width: 100%;
+	margin-top: 10px;	
+	font-size: 13px;
+}
+.myInfoTB_wrapper .myInfoTB td, .updateInfoTB_wrapper .myInfoTB tr:first-child td {
+	padding: 30px 0px 30px 30px;
+	font-weight: bold;
+}
+.updateInfoTB_wrapper .myInfoTB tr:not(:first-child) td {
+	padding: 24px 0px 24px 30px;
+	font-weight: bold;
+}
+.myInfoTB tr:not(:last-child) td {
+	border-bottom: 1px solid #dddddd;
+	height: 80px;
+}
+.myInfoTB td:first-child {
+	background-color: #F8F8F6;
+	width: 150px;
+}
+.myInfoTB input[name=name], .myInfoTB input[name=birth], .myInfoTB input[name=addr1] {
+	width: 80%;
+	height: 30px;
+	padding-left: 10px;
+	border: 1px solid #dddddd;
+}
+.myInfoTB input[name=email], .myInfoTB input[name=phone] {
+	width: 80%;
+	height: 30px;
+	padding-left: 10px;
+	border: 1px solid #dddddd;
+} 
+.addrInput div {
+	width: 80%;
+	display: flex;
+}
+.addrInput div input {
+	height: 30px;
+	padding-left: 10px;
+	margin: 5px 3px auto auto;
+	border: 1px solid #dddddd;
+}
+.addrInput .addrNoArea input, .addrInput .addr23Area input {
+	width: 49%;
+}
+#searchAddrBtn {
+	padding-left: 0px;
+}
+.addrInput .addr1Area input {
+	width: 100%;
+}
+.updateInfoBtn_wrapper {
+	margin: 20px auto 70px auto;
+	text-align: center;
+}
+.myInfoBtnDiv button, .updateInfoBtnDiv button {
+	padding: 5px 15px;	
+	font-size: 13px;
+	font-weight: bold;
+	border: 1px solid #dddddd;
+}
+.updateInfoBtnDiv button {
+	margin: auto 3px;
+}
+.updateInfoGuide {
+	padding-left: 10px;
+	margin-top: 3px;
+	color: red;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/* -- 비밀번호 변경 -- */
+.updatePassword_wrapper {
+	position: relative;
+	width: 410px;
+	margin: 80px auto auto auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid #dddddd;
+}
+.updatePass_wrapper {
+	position: relative;
+	width: 350px;
+	margin: 20px auto auto auto;
+}
+.updatePass_wrapper div {
+	width: 100%;		
+}
+.updatePassGuide {
+	font-size: 12px;
+	font-weight: bold;
+	color: gray;
+}
+.updatePassInput {
+	margin-top: 30px;
+}
+.updatePassInput input {
+	width: 100%;
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid #dddddd;
+}
+.updatePassInput input::placeholder {
+	font-size: 13px;
+}
+#afterPasswd {
+	margin-top: 10px;
+	border-bottom: none;
+}
+.updatePassBtn {
+	margin-top: 50px;	
+}
+.updatePassBtn button, .deleteUserBtn button {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 5px;
+	border: 1px solid #dddddd;
+	font-size: 14px;
+	font-weight: bold;
+}
+.updatePassBtn #checkBtn, .deleteUserBtn #deleteUserBtn {
+	background-color: #dc3545;
+	color: white;
+	border: none;
+}
+
+/* -- 회원탈퇴 -- */
+.deleteUser_wrapper {
+	width: 550px;
+	margin: 80px auto;
+}
+.deleteUserGuide_wrapper {
+	width: 420px;
+	margin: auto;
+}
+.deleteUserGuide {
+	width: 100%;
+	padding-top: 30px;	
+	font-weight: bold;	
+}
+.deleteUserGuide .guide1 {
+	color: gray;
+	font-size: 13px;
+	margin-bottom: 30px;
+}
+.deleteUserGuide .guide2, .deleteUserGuide .guide3 {
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+.deleteUserGuide .guide3 div {
+	margin-top: 5px;
+	padding-left: 10px;
+	color: gray;
+	font-weight: normal;
+}
+.deleteUserPassInput {
+	margin-top: 40px;
+}
+.deleteUserPassInput div {
+	font-size: 14px;
+	font-weight: bold;
+}
+.deleteUserPassInput input {
+	width: 100%;
+	height: 40px;
+	margin-top: 5px;
+	padding-left: 10px;
+	border: 1px solid #dddddd;
+	font-size: 13px;
+}
+.deleteUserBtn {
+	margin-top: 40px;	
+}
+.deleteUserBotBorder {
+	margin-top: 50px;
+	border-bottom: 2px solid #dddddd;
+}
+
+/* -- 비회원 주문/배송조회 -- */
+.nonMemberOrder_wrapper {
+	width: 500px;
+	margin: 100px auto auto auto;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 60px;
+	border-bottom: 2px solid #dddddd;
+}
+.nonMemberOrderTitle span {
+	padding-bottom: 10px;
+	border-bottom: 3px solid black;
+}
+.nonMemberOrderTitle {
+	padding-bottom: 10px;	
+	border-bottom: 2px solid #dddddd;
+}
+.findOrderInput {
+	width: 400px;
+	margin: 50px auto auto auto;
+}
+.findOrderInput input {
+	padding: 1px 10px;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 50px;
+	border: none;
+	border-bottom: 1px solid #dddddd;
+	font-size: 15px;
+	font-weight: bold;
+}
+.findOrderInput input::placeholder {
+	font-weight: normal;
+}
+.findOrderBtn {
+	display: flex;
+	width: 100%;
+}
+.findOrderBtn button {
+	width: 195px;
+	height: 40px;
+	border-radius: 20px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+.findOrderBtn #logIn {
+	align-items: flex-end;
+	margin-right: 0px;
+}
+
+/* -- footer -- */
+.footer {
+	width: 1320px;
+	margin: auto;
+	height: 100%;
+	font-size: 12px;
+	padding-top: 20px;
+}
+.phoenGuide {
+	padding-top: 2px;
+	color: #666666;
+}
+.phoenGuide span {
+	color: black;
+}
+.phoneGuide1 {
+	padding-right: 10px;
+	margin-right: 5px;
+	border-right: 1px solid #cbcbcb;
+}
+.phoneGuideDivider {
+	margin: auto 7px auto 5px;
+	border-right: 1px solid #cbcbcb;
+}
+.emailArea {
+	margin-top: 10px;
+	font-size: 13px;
+	font-weight: bold;
+}

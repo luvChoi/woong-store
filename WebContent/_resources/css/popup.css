@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;	
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+/* -- 주문 취소요청 -- */
+.requestCancel_title, .shoppingInquiry_title {
+	width: 520px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #393850;
+	color: #FFFFFF;
+	padding-left: 25px;
+}
+.requestCancel_title span, .shoppingInquiry_title span {
+	color: #FF4646;
+}
+
+.requestCancel_wrapper, .shoppingInquiry_wrapper {
+	margin-left: 25px;
+	font-size: 12px;
+	height: 600px;
+	width: 470px;
+}
+.requestCancel_guide {
+	margin: 15px auto;
+	color: gray;
+}
+.infoCancelProdOrderTB {
+	width: 100%;
+	border-top: 2px solid gray;
+	text-align: center;	
+}
+.infoCancelProdOrderTB td {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.infoCancelProdOrderTB td:nth-child(4) {
+	background-color: #f7f7f7;
+}
+.OrderProdNo {
+	color: #93949e;
+}
+.cancelReason_title {
+	margin: 20px auto 10px auto;
+	font-weight: bold;
+}
+.cancelReasonTB {
+	width: 100%;
+	border-top: 1px solid #dddde1;
+    border-bottom: 1px solid #dddde1;
+}
+.cancelReasonTB td, .shoppingInquiryTB td {
+	border-bottom: 1px solid #dbdbdb;
+}
+.cancelReasonTB td:first-child, .shoppingInquiryTB td:first-child {
+	width: 120px;
+	background-color: #f7f7f7;
+	padding: 10px;
+}
+.cancelReasonTB td:nth-child(2), .shoppingInquiryTB td:nth-child(2) {
+	width: 350px;
+	padding: 10px;
+}
+.cancelReasonTB select, .shoppingInquiryTB select, .shoppingInquiryTB input {
+	font-size: 12px;	
+}
+.cancelReasonTB textarea, .shoppingInquiryTB textarea  {
+	font-size: 12px;
+	height: 250px;
+	resize: none;
+}
+.cancelReasonTd {	
+	height: 250px;
+	padding: 10px;
+	vertical-align: top;
+}
+.requestCancelbtnArea, .shoppingInquirybtnArea {
+	padding-top: 20px;
+	text-align: center;
+}
+.requestCancelbtnArea button {
+	font-size: 12px;
+	font-weight: bold;	
+	background-color: #f2f2f2;
+	border: 1px solid #cbcbcb;
+	border-radius: 2px;
+	padding: 5px 10px;
+}
+	
+/* -- 판매자 문의하기 -- */	
+.infoInquiryTB {
+	width: 100%;
+	border-top: 1px solid #dbdbdb;
+	margin-top: 30px;
+	text-align: left;
+}
+.infoInquiryTB td {
+	padding: 10px;	
+	border-bottom: 1px solid #dbdbdb;
+}
+.infoInquiryTB td:first-child {	
+	width: 120px;
+	background-color: #f7f7f7;
+}
+.inquiryOrderNo span {
+	color: rgb(255, 0, 0);
+	font-weight: bold;
+	padding-left: 15px;
+}
+.inquiryProdName span{
+	padding-left: 10px;
+}
+
+/* 문의상품리스트 아코디언 */
+.inquiryProdList, .selectProdList {
+	width: 100%;
+	border: 1px solid #dbdbdb;
+	border-radius: 3px;
+	padding-left: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: white;
+	text-align: left;	
+}
+.selectProdList {
+	width: 330px;
+	height: 450px;
+	position: absolute;
+	overflow: hidden;
+}
+.selectProdList ul {
+	padding: 10px;
+	margin: 0px;	
+}
+.selectProdList li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.selectProdList input {
+	vertical-align: middle;
+}
+.selectProdList span {
+	color: gray;
+}
+	
+/* 문의테이블 */
+.shoppingInquiryTB {
+	width: 100%;
+	border-top: 1px solid #dddde1;
+    border-bottom: 1px solid #dddde1;
+    margin-top: 30px;
+}
+.inquiryGuideArea {	
+	text-align: left;
+	color: gray;
+	margin-top: 10px;
+}
+.shoppingInquirybtnArea button {
+	font-size: 13px;
+	font-weight: bold;	
+	background-color: #f2f2f2;
+	border: 1px solid #cbcbcb;
+	border-radius: 2px;
+	padding: 5px 15px;
+	margin: auto 3px;
+}
