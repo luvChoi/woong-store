@@ -135,19 +135,15 @@
 function sujungAddr(value1) { //배송지 변경
 	location.href = "${path }/order_servlet/orderSujungAddr.do?orderNo=" + value1;
 }
-
 function inquiry(value1) { //문의하기
 	window.open('${path}/popup_servlet/inquiry.do?orderNo=' + value1, '문의하기' + value1, 'width=520px,height=700px');
 }
-
 function orderCancel(value1) { //주문 취소
 	window.open('${path}/popup_servlet/requestCancel.do?orderProductNo=' + value1, '취소요청' + value1, 'width=520px,height=700px');
 }
-
 function infoCancel(value1) { //취소 정보
 	window.open('${path}/popup_servlet/infoCancel.do?orderProductNo=' + value1, '취소정보' + value1, 'width=520px,height=700px');
 }
-
 function rePurchase(value1, value2, value3) { //재구매
 	$("#product_no").val(value1);
 	$("#volume_order").val(value2);
@@ -156,7 +152,6 @@ function rePurchase(value1, value2, value3) { //재구매
 	document.orderRePurchase.action = "${path }/order_servlet/orderPay.do";
 	document.orderRePurchase.submit();
 }
-
 $(function() {
 	$("#moreOrderList").click(function() {
 		param = {
