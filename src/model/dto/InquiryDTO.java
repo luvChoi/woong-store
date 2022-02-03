@@ -5,20 +5,20 @@ import java.util.List;
 
 public class InquiryDTO {
 	//문의하기
-	private int no;				//일련번호
-	private int order_no;		//주문번호
-	private int inq_prodNo; 	//문의상품번호
-	private int member_no;		//회원번호
-	private String subject;		//제목
-	private String content;		//내용
-	private int ref;			//문의번호
-	private int ref_step;		//문의&답변 구분
-	private Date regi_date;		//등록일
-	//문의유형
-	private int typeNo;			//문의유형번호
-	private String typeStr;		//문의유형
+	private int no;
+	private int order_no;
+	private int inq_prodNo;
+	private int member_no;
+	private String subject;
+	private String content;
+	private int ref;
+	private int ref_step;
+	private Date regi_date;
+	
 	//조인필드
-	private List<OrderDTO> prodList;	//주문상품리스트
+	private int typeNo;
+	private String typeStr;	
+	private List<OrderDTO> prodList;
 	
 	//Getter&Setter
 	public int getNo() {
