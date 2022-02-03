@@ -18,8 +18,8 @@ public class CartDTO {
 	private int selling_price;
 	private int sale_percent;
 	private String info_thumbImg;
-	private int delivery_charge; //배송비
-	private String status; //진행상태
+	private int delivery_charge;
+	private String status;
 	
 	private int cnt_cartOfMember; //회원별 장바구니 수량
 	private List<Integer> cartNoList;
@@ -114,6 +114,5 @@ public class CartDTO {
 	}
 	public void setStatus(String status) {
 		this.status = status;
-	}
-	
+	}	
 }
