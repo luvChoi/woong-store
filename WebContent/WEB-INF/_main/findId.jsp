@@ -92,8 +92,7 @@ $(function() {
 			$birthInput.val('');
 			$birthInput.focus();
 			return;
-		}
-		
+		}		
 		if($phoneInput.val().trim() == "") {
 			alert('휴대전화를 입력하세요.');
 			$('input[name=phone]').focus();
@@ -111,8 +110,7 @@ $(function() {
 			$('input[name=phone]').val('');
 			$('input[name=phone]').focus();
 			return;
-		}
-		
+		}		
 		findForm.method = "post";
 		findForm.action = "${path }/main_servlet/findIdResult.do";
 		findForm.submit();		
@@ -127,6 +125,6 @@ $(function() {
 	});
 });
 </script>
-
+	
 </body>
 </html>
