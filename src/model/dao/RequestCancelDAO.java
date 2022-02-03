@@ -10,7 +10,6 @@ import config.DB;
 import model.dto.RequestCancelDTO;
 
 public class RequestCancelDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -27,7 +26,6 @@ public class RequestCancelDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}	
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 	
 	//취소사유 종류 호출
 	public List<RequestCancelDTO> getCancelType() {
@@ -58,10 +56,8 @@ public class RequestCancelDAO {
 		try {
 			String sql = "";
 			sql += "insert into infoCancel(no, order_product_no, cancel_type, cancel_reason, cancel_date) values (";
-			sql += " (select nvl(max(no), 0) + 1 from infoCancel), ?, ?, ?, sysdate)";
-			
-//			sql += "insert into infoCancel(no, order_product_no, cancel_type, cancel_reason, cancel_date)";
-//			sql += " select ifnull(max(no), 0) + 1, ?, ?, ?, curdate() from infoCancel";
+			sql += " (select nvl(max(no), 0) + 1 from infoCancel), ?, ?, ?, sysdate)";			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getOrder_product_no());
 			pstmt.setInt(2, dto.getCancel_type());
@@ -85,6 +81,7 @@ public class RequestCancelDAO {
 			sql += " where (i.order_product_no = o.order_product_no";
 			sql += " and i.cancel_type = c.no and o.product_no = p.no)";
 			sql += " and o.order_product_no = ?";
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getOrder_product_no());
 			rs = pstmt.executeQuery();
@@ -102,6 +99,5 @@ public class RequestCancelDAO {
 			getConnClose();
 		}
 		return dtoInfo;
-	}
-	
+	}	
 }
