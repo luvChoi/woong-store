@@ -12,7 +12,6 @@ import model.dto.CartDTO;
 import model.dto.OrderDTO;
 
 public class OrderDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -29,7 +28,6 @@ public class OrderDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 	
 	//주문내역 row 카운팅 호출
 	public int getCountRow(OrderDTO dto, Date searchStart, Date searchEnd) { // 날짜 필터링 해야함
@@ -43,8 +41,8 @@ public class OrderDAO {
 			sql += " from product p, orderTB o";
 			sql += " where (p.no = o.product_no) and o.member_no = ?";			
 			sql += " and order_date between ? and to_date( ?, 'YY/MM/DD') + 0.99999";		
-//			sql += " and order_date between ? and ?";
 			sql += " order by order_date desc, order_no desc, o.order_product_no desc) tb";
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getMember_no());			
 			pstmt.setDate(2, searchStart);
@@ -68,19 +66,13 @@ public class OrderDAO {
 		try {
 			String sql = "";
 			sql += "select rownum, A.* from";
-//			sql += "select tb2.* FROM (select @rownum := @rownum + 1 as rnum, tb1.* FROM";
 			sql += " (select o.order_no, o.order_product_no, p.name, p.selling_price, p.sale_percent, p.maker, p.info_thumbImg,";
 			sql += "  o.product_no, o.volume_order, o.add_sale, o.status, o.order_date";
 			sql += " from product p, orderTB o";
-			sql += " where (p.no = o.product_no) and o.member_no = ?";
-			
+			sql += " where (p.no = o.product_no) and o.member_no = ?";			
 			sql += " and order_date between ? and to_date( ?, 'YY/MM/DD') + 0.99999";
 			sql += " order by order_date desc, order_no desc, o.order_product_no desc) A";
 			sql += " where rownum between 1 and (5 * ?)";
-			
-//			sql += " and order_date BETWEEN ? and ?) tb1, (select @rownum := 0) TMP";
-//			sql += " order by order_date desc, order_no DESC, order_product_no DESC) tb2";
-//			sql += " where rnum between 1 and (5 * ?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getMember_no());
@@ -228,17 +220,15 @@ public class OrderDAO {
 			sql += "insert into orderTB";
 			sql += " select";
 			sql += " (select nvl(max(order_no),0)";
-//			sql += " (select ifnull(max(order_no),0)";
 			if(count == 1) {
 				sql += "+" + count;
 			}			
 			sql += " from orderTB),";			
 			sql += " (select nvl(max(order_product_no),0)+1 from orderTB),";
-//			sql += " (select ifnull(max(order_product_no),0)+1 from orderTB),";
 			sql += " ?, product_no, volume_order, add_sale,";
 			sql += " ?, ?, ?, ?, ?, ?, ?, '결제완료', sysdate";
-//			sql += " ?, ?, ?, ?, ?, ?, ?, '결제완료', curdate()";
 			sql += " from cart where cart_no=?";
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getMember_no());
 			pstmt.setString(2, dto.getName());
@@ -266,18 +256,13 @@ public class OrderDAO {
 			String sql = "";
 			sql += "insert into orderTB values(";
 			sql += " (select nvl(max(order_no),0)";
-//			sql += " (select ifnull(max(order_no),0)";
 			if(count == 1) {
 				sql += "+" + count;
 			}			
 			sql += " from orderTB),";
 			sql += " (select nvl(max(order_product_no),0)+1 from orderTB),";
 			sql += " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '결제완료', sysdate";
-			sql += ")";
-			
-//			sql += ", ifnull(max(order_product_no),0)+1,";
-//			sql += " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'curdate()";
-//			sql += " from orderTB";
+			sql += ")";	
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getMember_no());
