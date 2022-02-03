@@ -90,13 +90,11 @@ body {
 	margin: 10px auto auto auto;
 	display: flex;
 }
-
 .idTag, .passTag {
 	padding-top: 10px;
 	width: 120px;
 }
-
-.idInput > input, .passInput > input {
+.idInput input, .passInput input {
 	width: 280px;
 	height: 45px;
 	border: gray solid 1px;
@@ -175,7 +173,6 @@ img.headerLoginIcon, .headerAfterLogin #memberUser {
 	width: 25px;
 	height: 25px;
 }
-
 .whatFind_wrapper {
 	width: 500px;
 	margin: 100px auto auto auto;
@@ -278,7 +275,6 @@ img.headerLoginIcon, .headerAfterLogin #memberUser {
 	text-align: center;
 	border-bottom: 1px solid #cbcbcb;
 }
-
 .findResultBtnGroup {
 	width: 100%;
 	margin-top: 30px;
@@ -393,6 +389,7 @@ form[name=updatePassForm] {
 .myPassUpdateLink {
 	margin-top: 40px;
 }
+
 /*  메인헤더_메뉴드롭 */
 div#menuDrop, div#memberMenuDrop {
 	position: absolute;
