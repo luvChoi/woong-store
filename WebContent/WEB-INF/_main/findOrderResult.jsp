@@ -211,25 +211,20 @@
 		</table>	
 	</div>
 </div>
-<div class="findOrderResultBlank">
-	
-</div>
+<div class="findOrderResultBlank"></div>
 
 <!-- footer -->
 <div class="footer-wrapper">
 	<%@include file="../_include/inc_footer.jsp" %>
 </div>
-
-
+	
 <script>
 function orderCancel(value1) { //주문 취소
 	window.open('${path}/popup_servlet/requestCancel.do?orderProductNo=' + value1, '취소요청' + value1, 'width=520px,height=700px');
 }
-
 function infoCancel(value1) { //취소 정보
 	window.open('${path}/popup_servlet/infoCancel.do?orderProductNo=' + value1, '취소정보' + value1, 'width=520px,height=700px');
 }
-
 function inquiry(value1) { //문의하기
 	window.open('${path}/popup_servlet/inquiry.do?orderNo=' + value1, '문의하기' + value1, 'width=520px,height=700px');
 }
