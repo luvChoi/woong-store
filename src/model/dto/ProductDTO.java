@@ -113,5 +113,4 @@ public class ProductDTO {
 	public void setMaker_no(int maker_no) {
 		this.maker_no = maker_no;
 	}	
-	
 }
