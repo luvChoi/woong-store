@@ -3,16 +3,17 @@ package model.dto;
 import java.sql.Date;
 
 public class RequestCancelDTO {
-	//필드 : 주문취소
+	//필드
 	private int no;
 	private int order_product_no;
 	private int cancel_type;
 	private String cancel_reason;
 	private Date cancel_date;	
-	//필드 : 취소타입
+	
+	//취소타입(조인필드)
 	private int typeNo;
 	private String cancelTypeStr;	
-	//필드 : 조인을 위함
+	//주문정보(조인필드)
 	private String product_name;
 	private int volume_order;
 	private String status;
