@@ -33,20 +33,17 @@ public class MemberController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 		
-		//--------------------------------------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
-		
-		HttpSession session = request.getSession();	
+		HttpSession session = request.getSession();
 						
 		if(session.getAttribute("cookMemberNo") != null) {
 			cookMemberNo = (Integer) session.getAttribute("cookMemberNo");
-		}		
-		//--------------------------------------------------------------------------------------------------------
+		}
 		
 		String page = "";
 		
 		if(url.contains("join.do") == true) {
-			//System.out.println("join");
 			page = "/WEB-INF/member/join.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(page);
 			rd.forward(request, response);
@@ -278,8 +275,7 @@ public class MemberController extends HttpServlet {
 				out.println("</script>");
 				out.flush();
 				out.close();
-			}
-			
+			}			
 			String no_ = request.getParameter("no");
 			int no = Integer.parseInt(no_);
 			
