@@ -43,16 +43,14 @@ public class OrderController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 
-		// --------------------------------------------------------------------------------------------------------
-		int cookMemberNo = 0;
-		
+		//로그인 여부 확인
+		int cookMemberNo = 0;		
 		HttpSession session = request.getSession();
 
 		if (session.getAttribute("cookMemberNo") != null) {
 			cookMemberNo = (Integer) session.getAttribute("cookMemberNo");
 			session.setMaxInactiveInterval(5 * 60); //5분
 		}
-		// --------------------------------------------------------------------------------------------------------
 
 		String page = "/WEB-INF/_main/main.jsp";
 		String inc_page = "../order/";
@@ -85,8 +83,7 @@ public class OrderController extends HttpServlet {
 				rowMultiple = Integer.parseInt(rowMultiple_);
 			}
 			
-			List<OrderDTO> list = dao.getSelectAll(dto, searchStart, searchEnd, rowMultiple);						
-			
+			List<OrderDTO> list = dao.getSelectAll(dto, searchStart, searchEnd, rowMultiple);			
 			List<String> dateList = new ArrayList<>();
 
 			for(OrderDTO orderDto : list) {
@@ -472,6 +469,5 @@ public class OrderController extends HttpServlet {
 			System.out.println(msg);
 			response.sendRedirect(move);			
 		} 
-
 	}
 }
