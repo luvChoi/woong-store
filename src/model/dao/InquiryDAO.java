@@ -12,7 +12,6 @@ import model.dto.InquiryDTO;
 import model.dto.OrderDTO;
 
 public class InquiryDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -29,7 +28,6 @@ public class InquiryDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}	
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 
 	//문의유형 호출
 	public List<InquiryDTO> getInquiryType() {
@@ -65,8 +63,7 @@ public class InquiryDAO {
 			sql += " order by o.order_product_no";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, ordertNo);
-			rs = pstmt.executeQuery();
-			
+			rs = pstmt.executeQuery();			
 			while(rs.next()) {
 				OrderDTO dto = new OrderDTO();
 				dto.setOrder_product_no(rs.getInt("order_product_no"));
@@ -87,7 +84,6 @@ public class InquiryDAO {
 		getConn();
 		try {
 			String sql = "select nvl(max(ref), 0) max_ref from inquiry";
-			//String sql = "select IFNULL(max(ref), 0) max_ref from inquiry";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -141,20 +137,15 @@ public class InquiryDAO {
 			sql += " p.no, p.name, p.maker, p.info_thumbimg";
 			sql += " from inquiry i, orderTB o, inquiryType i_type, product p";
 			sql += " where (i.type_no = i_type.no and i.inq_prodNo = o.order_product_no";
-			sql += " and o.product_no = p.no)";
-						
+			sql += " and o.product_no = p.no)";						
 			sql += " and ref in (select ref from (select rownum rnum, a.* from (select ref from inquiry";
-			//sql += " and ref in (select ref FROM (SELECT @rownum := @rownum + 1 AS rnum, tb1.* from (select ref from inquiry";
 			sql += " where member_no = ? and regi_date >= ? group by ref";
 			if(cntRef == 1 || cntRef == 2) {
 				sql += " having count(ref) = ?";
 			}
 			sql += " order by ref desc) a) b";			
 			sql += " where rnum between ? and ?)";			
-			sql += " order by ref_step";
-			//sql += " ) tb1, (SELECT @rownum := 0) TMP ORDER BY ref DESC) tb2";
-			//sql += " where rnum between ? and ?)";
-			//sql += " order by ref desc, ref_step";
+			sql += " order by ref_step";		
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, memberNo);
@@ -207,11 +198,7 @@ public class InquiryDAO {
 			sql += "insert into inquiry values (";
 			sql += "seq_inquiry.nextval, ?, ?, ?, ?, ?, ?, ?, ?";
 			sql += ", sysdate)";
-			
-//			sql += "insert into inquiry";
-//			sql += " select ifnull(max(no),0)+1, ?, ?, ?, ?, ?, ?, ?, ?";
-//			sql += ", curdate() from inquiry";
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getOrder_no());
 			pstmt.setInt(2, dto.getInq_prodNo());
@@ -246,8 +233,5 @@ public class InquiryDAO {
 			getConnClose();
 		}
 		return result;
-		
-		
-	}
-	
+	}	
 }
