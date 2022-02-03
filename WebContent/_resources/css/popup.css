@@ -24,7 +24,6 @@
 .requestCancel_title span, .shoppingInquiry_title span {
 	color: #FF4646;
 }
-
 .requestCancel_wrapper, .shoppingInquiry_wrapper {
 	margin-left: 25px;
 	font-size: 12px;
@@ -58,7 +57,7 @@
 .cancelReasonTB {
 	width: 100%;
 	border-top: 1px solid #dddde1;
-    border-bottom: 1px solid #dddde1;
+    	border-bottom: 1px solid #dddde1;
 }
 .cancelReasonTB td, .shoppingInquiryTB td {
 	border-bottom: 1px solid #dbdbdb;
@@ -158,8 +157,8 @@
 .shoppingInquiryTB {
 	width: 100%;
 	border-top: 1px solid #dddde1;
-    border-bottom: 1px solid #dddde1;
-    margin-top: 30px;
+    	border-bottom: 1px solid #dddde1;
+    	margin-top: 30px;
 }
 .inquiryGuideArea {	
 	text-align: left;
