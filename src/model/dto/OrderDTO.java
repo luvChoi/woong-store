@@ -28,7 +28,7 @@ public class OrderDTO {
 	private String addr2;
 	private String addr3;	
 	private String request_term;
-	private String status;	//status 테이블 필요
+	private String status;
 	private Date order_date;
 	
 	private int cartNo;
@@ -173,6 +173,5 @@ public class OrderDTO {
 	}
 	public void setCartNo(int cartNo) {
 		this.cartNo = cartNo;
-	}
-	
+	}	
 }
