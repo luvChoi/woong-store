@@ -218,8 +218,7 @@ function order() {
 		$('input[name=name]').val('');
 		$('input[name=name]').focus();
 		return;
-	}
-	
+	}	
 	var $phoneInput = $('input[name=phone]');	
 	if($phoneInput.val().trim() == "") {
 		alert('휴대전화를 입력하세요.');
@@ -238,8 +237,7 @@ function order() {
 		$('input[name=phone]').val('');
 		$('input[name=phone]').focus();
 		return;
-	}
-	
+	}	
 	if($('input[name=addr_no]').val().trim() == "") {
 		alert('우편번호를 입력하세요.');
 		$('input[name=addr_no]').focus();
@@ -260,6 +258,7 @@ function order() {
 	orderForm.action = "${path }/order_servlet/orderProc.do";
 	orderForm.submit();
 }
+	
 $(function() {
 	var memberNo = ${memberInfo.no };
 	
