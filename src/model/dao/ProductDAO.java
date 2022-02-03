@@ -11,7 +11,6 @@ import config.DB;
 import model.dto.ProductDTO;
 
 public class ProductDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -28,7 +27,6 @@ public class ProductDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}	
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 			
 	//상품분류List
 	public List<ProductDTO> getProductType() {
@@ -88,17 +86,7 @@ public class ProductDAO {
 		List<ProductDTO> list = new ArrayList<>();
 		getConn();
 		try {
-			String sql = "";			
-//			sql += "SELECT tb2.* FROM  (select @ROWNUM := @ROWNUM + 1 AS rnum, tb1.* FROM";
-//			sql += " (select (selling_price * (100 - sale_percent)) last_price, p.* from product p";			
-//			if(!classification.equals("-") && searchWord.equals("-")) {
-//				sql += " where classification = ?";
-//			} else if(classification.equals("-") && !searchWord.trim().equals("")) {
-//				sql += " where name like ? or description like ?";
-//			}			
-//			sql += ") tb1, (SELECT @ROWNUM := 0) TMP";
-//			sql += " order by " + orderBy + ") tb2 where rnum between ? and ?";
-			
+			String sql = "";
 			sql += "select * from (select rownum rnum, a.* from";
 			sql += " (select * from (select (selling_price * (100 - sale_percent)) last_price, p.* from product p)";			
 			if(!classification.equals("-") && searchWord.equals("-")) {
@@ -143,11 +131,7 @@ public class ProductDAO {
 		List<ProductDTO> list = new ArrayList<>();
 		getConn();
 		try {
-			String sql = "";			
-//			sql += "select tb2.* from (select @ROWNUM := @ROWNUM + 1 as rnum, tb1.* from (select * from product";			
-//			sql += " where regi_date >= ?) tb1, (SELECT @ROWNUM := 0) TMP";
-//			sql += " order by no DESC) tb2 where rnum between 1 AND ?";
-			
+			String sql = "";
 			sql += "select * from (select rownum rnum, a.* from (select * from  product";
 			sql += " where regi_date >= ? order by regi_date desc) a)";
 			sql += " where rnum between 1 AND ?";
@@ -184,12 +168,7 @@ public class ProductDAO {
 			sql += " (select product_no, sum(volume_order) salesVol from orderTB";
 			sql += " where status != '취소완료' and order_date >= ? group by product_no) o";
 			sql += " where p.no = o.product_no";
-			sql += " order by o.salesVol desc, p.regi_date) tb) tbtb where rnum between 1 and ?";
-			
-//			sql += " select o.salesVol, p.* from product p, (select product_no, sum(volume_order) salesVol";
-//			sql += " from orderTB where status != 'and order_date >= ? group by product_no) o";
-//			sql += " where p.no = o.product_no ORDER BY salesVol desc, no desc";
-//			sql += " limit 0, ?";
+			sql += " order by o.salesVol desc, p.regi_date) tb) tbtb where rnum between 1 and ?";			
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setDate(1, searchStart);
