@@ -8,7 +8,6 @@ import config.DB;
 import model.dto.MemberDTO;
 
 public class MemberDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -25,7 +24,6 @@ public class MemberDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}	
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 	
 	//회원정보 호출(1명)
 	public MemberDTO getMemberInfo(MemberDTO dto) {
@@ -64,7 +62,6 @@ public class MemberDAO {
 		try {
 			String sql = "";
 			sql += "select no, name, trunc(sysdate - pwdUpd_date) passChg_period,";
-			//sql += "select no, name, (curdate() - pwdUpd_date) passChg_period,";
 			sql += " (select count(member_no) from cart where member_no =";			
 			sql += " (select no from member where id=? and passwd = ?)) cart_cnt";			
 			sql += " from member where id=? and passwd=?";
@@ -189,9 +186,6 @@ public class MemberDAO {
 			String sql = "";
 			sql += "insert into member";
 			sql += " (no, id, passwd, name, birth, gender, email, phone, addr_no, addr1, addr2, addr3, regi_date, pwdUpd_date)";
-						
-//			sql += " select ifnull(max(no),0)+1,";
-//			sql += " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, curdate(), curdate() from member";
 			sql += " values(seq_member.nextval,";
 			sql += " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate, sysdate)";
 			
@@ -246,13 +240,13 @@ public class MemberDAO {
 		return result;
 	}
 	
-	//회원별 장바구니 삭제 (회원탈퇴용)
+	//회원 삭제 (회원탈퇴용)
 	public int setDeleteMember(MemberDTO dto) {
 		int result = 0;
 		getConn();
 		try {
 			String sql = "delete from member where no = ?";			
-			pstmt = conn.prepareStatement(sql);			
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getNo());			
 			result = pstmt.executeUpdate();
 		} catch(Exception e) {
@@ -314,6 +308,5 @@ public class MemberDAO {
 			getConnClose();
 		}
 		return result;
-	}
-	
+	}	
 }
