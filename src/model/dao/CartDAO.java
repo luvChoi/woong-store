@@ -10,7 +10,6 @@ import config.DB;
 import model.dto.CartDTO;
 
 public class CartDAO {
-	//--- 공통부분 시작 ---------------------------------------------------------------------------
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -27,7 +26,6 @@ public class CartDAO {
 	public void getConnClose() {
 		DB.dbConnClose(rs, pstmt, conn);
 	}
-	//--- 공통부분 종료 ---------------------------------------------------------------------------
 	
 	//장바구니 수량확인
 	public int getCartCnt(CartDTO dto) {
@@ -108,14 +106,14 @@ public class CartDAO {
 		try {
 			String sql = "insert into cart(cart_no, member_no, product_no, volume_order, add_sale, regi_date) ";
 			sql += " values((select nvl(max(cart_no),0)+1 from cart), ?, ?, ?, ?, sysdate)";
-			//String sql = "insert into cart(cart_no, member_no, product_no, volume_order, add_sale, regi_date) ";
-			//sql += " select IFNULL(max(cart_no),0)+1, ?, ?, ?, ?, CURDATE() FROM cart";
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getMember_no());
 			pstmt.setInt(2, dto.getProduct_no());
 			pstmt.setInt(3, dto.getVolume_order());
 			pstmt.setInt(4, dto.getAdd_sale());
-			result = pstmt.executeUpdate();			
+			result = pstmt.executeUpdate();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
