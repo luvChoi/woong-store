@@ -37,16 +37,14 @@ public class PopupController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 		
-		// --------------------------------------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
-
 		HttpSession session = request.getSession();
 
 		if (session.getAttribute("cookMemberNo") != null) {
 			cookMemberNo = (Integer) session.getAttribute("cookMemberNo");
 			session.setMaxInactiveInterval(5 * 60);
 		}
-		// --------------------------------------------------------------------------------------------------------
 				
 		String page = "";
 		
@@ -196,5 +194,4 @@ public class PopupController extends HttpServlet {
 			rd.forward(request, response);
 		}
 	}
-
 }
