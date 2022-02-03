@@ -20,9 +20,9 @@ public class MemberDTO {
 	private Date regi_date;
 	private Date pwdUpd_date;
 	
-	private int passChg_period; //비밀번호 변경 주기 확인
-	private int cart_cnt; //장바구니 수량 확인
-	private String beforePasswd; // 현재 비밀번호
+	private int passChg_period;
+	private int cart_cnt;
+	private String beforePasswd;
 	
 	//Getter & Setter
 	public int getNo() {
