@@ -122,16 +122,14 @@ $(function(){
 			$('input[name=passwdChk]').val('');
 			$('input[name=passwdChk]').focus();
 			return;
-		}
-		
+		}		
 		if($('input[name=passwdChk]').val() != $('input[name=passwd]').val()) {
 			alert('비밀번호가 일치하지 않습니다.');
 			$('input[name=passwdChk]').val('');
 			$('input[name=passwd]').select();
 			$('input[name=passwd]').focus();
 			return;
-		}
-		
+		}		
 		if($('input[name=name]').val().trim() == "") {
 			alert('이름을 입력해 주세요.');
 			$('input[name=name]').val('');
@@ -166,15 +164,13 @@ $(function(){
 			alert('성별을 선택해 주세요.');
 			$('select[name=gender]').focus();
 			return;
-		}
-				
+		}				
 		var $phoneInput = $('input[name=phone]');
 		if($phoneInput.val().trim() == "") {
 			alert('휴대전화를 입력하세요.');
 			$('input[name=phone]').focus();
 			return;
-		}
-		
+		}		
 		var phoneChk = $phoneInput.val().replace(/\-/g, '');	
 		if(isNaN(phoneChk)) {
 			alert('휴대전화는 숫자로 입력해주세요.');
@@ -188,7 +184,6 @@ $(function(){
 			$('input[name=phone]').focus();
 			return;
 		}		
-		
 		if($('input[name=addr_no]').val().trim() == "") {
 			alert('우편번호를 입력해 주세요.');
 			$('input[name=addr_no]').val('');
