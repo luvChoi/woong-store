@@ -77,8 +77,7 @@ $(function(){
 			alert('비밀번호를 입력해 주세요.');
 			$password.focus();
 			return;
-		}
-		
+		}		
 		deleteUserForm.method = "post";
 		deleteUserForm.action = "${path }/member_servlet/deleteUserProc.do";
 		deleteUserForm.submit();
