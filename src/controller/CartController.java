@@ -38,7 +38,7 @@ public class CartController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 		
-		//--------------------------------------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
 		int cookCartCnt = 0;
 		
@@ -57,7 +57,6 @@ public class CartController extends HttpServlet {
 				session.setAttribute("cookCartCnt", cookCartCnt);					
 			}
 		}
-		//--------------------------------------------------------------------------------------------------------
 		
 		String page = "";
 		String inc_page = "../cart/";
