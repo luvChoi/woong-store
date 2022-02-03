@@ -9,10 +9,6 @@ public class DB {
 		String dbUrl = "jdbc:oracle:thin:@localhost:1521/xe";
 		String dbId = "woong_shop";
 		String dbPasswd = "1234";
-//		String dbDriver = "com.mysql.jdbc.Driver";
-//		String dbUrl = "jdbc:mysql://localhost/soulofaiur";		
-//		String dbId = "soulofaiur";
-//		String dbPasswd = "d!00798ryu";
 		
 		Connection conn = null;
 		try {
