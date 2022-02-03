@@ -42,7 +42,7 @@ public class _MainController extends HttpServlet {
 		String path = request.getContextPath();
 		String url = request.getRequestURL().toString();
 
-//--------------------------------------------------------------------------------------------------------
+		//로그인 여부 확인
 		int cookMemberNo = 0;
 		int cookUpdPeriod = 0;
 		
@@ -52,7 +52,6 @@ public class _MainController extends HttpServlet {
 			cookMemberNo = (Integer) session.getAttribute("cookMemberNo");
 		}
 		
-//--------------------------------------------------------------------------------------------------------		
 		String page = "";
 		if(url.contains("login.do") == true) {
 			String id = request.getParameter("id");
