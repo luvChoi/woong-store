@@ -12,7 +12,7 @@
 <img src="https://user-images.githubusercontent.com/98741141/152640482-c9ca0e64-be88-4926-b672-6462780e1147.JPG" style="width: 800px; height: 500px;"><br>
 
 ## 기능
- - 회원가입 / 로그인 (Session 사용)<br>
- - 장바구니 (Cookie 사용)<br>
- - 주문하기 (조회, 문의, 취소)<br>
- - 상품검색 / 페이징&정렬 (Ajax 처리)<br>
+ - **회원가입 / 로그인 (Session 사용)**<br>
+ - **장바구니 (Cookie 사용)**<br>
+ - **주문하기 (조회, 문의, 취소)**<br>
+ - **상품검색 / 페이징&정렬 (Ajax 처리)**<br>
