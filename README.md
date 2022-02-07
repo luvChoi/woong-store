@@ -1,5 +1,9 @@
 # [STORE](http://woong-store.com)
-[개인프로젝트] JSP Model2로 구현한 가전제품 쇼핑몰 개발<br><br>
+[개인프로젝트] JSP Model2로 구현한 가전제품 쇼핑몰 개발<br>
+
+ ### 개발목적
+ - 누구나 쉽게 접할 수 있는 쇼핑몰을 주제로 선정<br>
+ - 설제 서비스를 계획하는 입장에서 사용자 편의성을 고려하며 제작한 개인프로젝트<br>
 
 ## 요약
 ![image](https://user-images.githubusercontent.com/98741141/152644288-59b2ced1-59d4-41be-a03f-1ee822b0ea3e.png)<br>
